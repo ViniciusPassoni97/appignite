@@ -13,11 +13,50 @@ import {
     Highlights,
     Transitions,
     Title,
+    List
 } from './style';
 
-import { TransitionCard } from '../../components/TransactionCard'
+import { TransitionCard, TransitionCardProps } from '../../components/TransactionCard'
+
+export interface DataListPros extends TransitionCardProps {
+    id: string;
+}
 
 export default function Dashboard() {
+    const dataList: DataListPros[] = [{ 
+        id: '1',
+        type: 'positive',
+        title: 'Desenvolvimento de Site',
+        amount: 'R$ 14.000,00',
+        category: {
+            name: 'Vendas',
+            icon: 'dollar-sign',
+        },
+        date: '13/04/2021',
+    },
+    {
+        id: '2',
+        type: 'negative',
+        title: 'Hamburgueria Pizzy',
+        amount: 'R$ 59,00',
+        category: {
+            name: 'Alimentação',
+            icon: 'coffee',
+        },
+        date: '13/04/2021',
+    },
+    {
+        id: '3',
+        type: 'negative',
+        title: 'Aluguel do Apartamento',
+        amount: 'R$ 1.200,00',
+        category: {
+            name: 'Casa',
+            icon: 'shopping-bag',
+        },
+        date: '13/04/2021',
+    }];
+
     return (
         <Container>
             <Header>
@@ -43,8 +82,12 @@ export default function Dashboard() {
             </Highlights>
             <Transitions>
                 <Title>Listagem</Title>
-                <TransitionCard />
+                <List
+                    data={dataList}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => <TransitionCard data={item} />}
+                />
             </Transitions>
         </Container>
-    )
-}
+    );
+};
