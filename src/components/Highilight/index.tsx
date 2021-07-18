@@ -1,5 +1,6 @@
 import React from 'react';
-import { 
+
+import {
     Container,
     Header,
     Title,
@@ -9,16 +10,34 @@ import {
     LastTransition
 } from './style';
 
-export const Highlight = () => {
-    return(
-        <Container>
+interface IProps {
+    title: string;
+    amount: string;
+    lastTransition: string;
+    type: 'up' | 'down' | 'total';
+};
+
+const icon = {
+    up: 'arrow-up-circle',
+    down: 'arrow-down-circle',
+    total: 'dollar-sign',
+}
+
+export const Highlight = ({
+    amount,
+    lastTransition,
+    title,
+    type
+}: IProps) => {
+    return (
+        <Container type={type}>
             <Header>
-                <Title>Entrada</Title>
-                <Icon name='arrow-up-circle' />
+                <Title type={type}>{title}</Title>
+                <Icon name={icon[type]} type={type}/>
             </Header>
             <Footer>
-                <Amount>R$ 5700,00</Amount>
-                <LastTransition>Última entrada dia 13 de abril</LastTransition>
+                <Amount type={type}>{amount}</Amount>
+                <LastTransition type={type}>{lastTransition}</LastTransition>
             </Footer>
         </Container>
     );

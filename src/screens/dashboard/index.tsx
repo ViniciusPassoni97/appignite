@@ -33,9 +33,9 @@ export default function Dashboard() {
                 </UserWrapper>
             </Header>
             <Highlights>
-                <Highlight />
-                <Highlight />
-                <Highlight />
+                <Highlight type="up" title="Entradas" amount="R$ 17.400,00" lastTransition="Última entrada dia 16 de abril"/>
+                <Highlight type="down" title="Saídas" amount="R$ 4.000,00" lastTransition="Última entrada dia 16 de abril"/>
+                <Highlight type="total" title="Total" amount="R$ 13.400,00" lastTransition="Última entrada dia 16 de abril"/>
             </Highlights>
         </Container>
     )
