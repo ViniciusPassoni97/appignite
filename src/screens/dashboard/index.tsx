@@ -9,7 +9,8 @@ import {
     UserGreeting,
     UserName,
     UserWrapper,
-    Icon
+    Icon,
+    Highlights
 } from './style';
 
 export default function Dashboard() {
@@ -31,7 +32,11 @@ export default function Dashboard() {
                     <Icon name="power"/>
                 </UserWrapper>
             </Header>
-            <Highlight />
+            <Highlights>
+                <Highlight />
+                <Highlight />
+                <Highlight />
+            </Highlights>
         </Container>
     )
 }
