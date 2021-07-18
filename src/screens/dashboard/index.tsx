@@ -10,8 +10,12 @@ import {
     UserName,
     UserWrapper,
     Icon,
-    Highlights
+    Highlights,
+    Transitions,
+    Title,
 } from './style';
+
+import { TransitionCard } from '../../components/TransactionCard'
 
 export default function Dashboard() {
     return (
@@ -29,14 +33,18 @@ export default function Dashboard() {
                             </UserName>
                         </User>
                     </UserInfo>
-                    <Icon name="power"/>
+                    <Icon name="power" />
                 </UserWrapper>
             </Header>
             <Highlights>
-                <Highlight type="up" title="Entradas" amount="R$ 17.400,00" lastTransition="Última entrada dia 16 de abril"/>
-                <Highlight type="down" title="Saídas" amount="R$ 4.000,00" lastTransition="Última entrada dia 16 de abril"/>
-                <Highlight type="total" title="Total" amount="R$ 13.400,00" lastTransition="Última entrada dia 16 de abril"/>
+                <Highlight type="up" title="Entradas" amount="R$ 17.400,00" lastTransition="Última entrada dia 16 de abril" />
+                <Highlight type="down" title="Saídas" amount="R$ 4.000,00" lastTransition="Última entrada dia 16 de abril" />
+                <Highlight type="total" title="Total" amount="R$ 13.400,00" lastTransition="Última entrada dia 16 de abril" />
             </Highlights>
+            <Transitions>
+                <Title>Listagem</Title>
+                <TransitionCard />
+            </Transitions>
         </Container>
     )
 }
